@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_11_102325) do
+ActiveRecord::Schema.define(version: 2022_08_11_105727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,16 @@ ActiveRecord::Schema.define(version: 2022_08_11_102325) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["restaurant_id"], name: "index_employees_on_restaurant_id"
+  end
+
+  create_table "linked_items", force: :cascade do |t|
+    t.string "linkeditemable_type", null: false
+    t.bigint "linkeditemable_id", null: false
+    t.bigint "menu_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["linkeditemable_type", "linkeditemable_id"], name: "index_linked_items_on_linkeditemable"
+    t.index ["menu_id"], name: "index_linked_items_on_menu_id"
   end
 
   create_table "menu_addons", force: :cascade do |t|
@@ -134,6 +144,7 @@ ActiveRecord::Schema.define(version: 2022_08_11_102325) do
   add_foreign_key "deal_menu_items", "deals"
   add_foreign_key "deal_menu_items", "menu_items"
   add_foreign_key "employees", "restaurants"
+  add_foreign_key "linked_items", "menus"
   add_foreign_key "menu_addons", "menu_items"
   add_foreign_key "menu_items", "menu_categories"
   add_foreign_key "menu_options", "menu_items"
