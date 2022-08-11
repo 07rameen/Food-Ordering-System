@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  phoneNo: MyString
+  rating: 1
+  cutPercent: 1
+  location: MyString
+  postalCode: 1
+
+two:
+  name: MyString
+  phoneNo: MyString
+  rating: 1
+  cutPercent: 1
+  location: MyString
+  postalCode: 1

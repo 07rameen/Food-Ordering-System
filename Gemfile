@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'jquery-rails'
 gem 'therubyracer'
 gem 'jquery-easing-rails'
+gem 'activeadmin'
+gem 'devise'
 
 
 
