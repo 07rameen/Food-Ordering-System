@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_12_060314) do
+ActiveRecord::Schema.define(version: 2022_08_12_062854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,7 +107,16 @@ ActiveRecord::Schema.define(version: 2022_08_12_060314) do
     t.bigint "menu_item_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "menu_order_option_id", null: false
     t.index ["menu_item_id"], name: "index_menu_options_on_menu_item_id"
+    t.index ["menu_order_option_id"], name: "index_menu_options_on_menu_order_option_id"
+  end
+
+  create_table "menu_order_addons", force: :cascade do |t|
+    t.bigint "menu_addon_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["menu_addon_id"], name: "index_menu_order_addons_on_menu_addon_id"
   end
 
   create_table "menu_order_options", force: :cascade do |t|
@@ -167,6 +176,8 @@ ActiveRecord::Schema.define(version: 2022_08_12_060314) do
   add_foreign_key "menu_addons", "menu_items"
   add_foreign_key "menu_items", "menu_categories"
   add_foreign_key "menu_options", "menu_items"
+  add_foreign_key "menu_options", "menu_order_options"
+  add_foreign_key "menu_order_addons", "menu_addons"
   add_foreign_key "menu_order_options", "menu_options", column: "menu_options_id"
   add_foreign_key "menus", "restaurants"
   add_foreign_key "order_items", "menu_items"
