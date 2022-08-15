@@ -4,10 +4,18 @@ ActiveAdmin.register_page "Dashboard" do
 
   content title: proc { I18n.t("active_admin.dashboard") } do
     div class: "blank_slate_container", id: "dashboard_default_message" do
-      span class: "blank_slate" do
-        span I18n.t("active_admin.dashboard_welcome.welcome")
-        small I18n.t("active_admin.dashboard_welcome.call_to_action")
+    end
+
+    section "Restaurant Information" do
+      table_for Restaurant.order("name asc").limit(5) do
+        column :name do |restaurant|
+          link_to restaurant.name,[:admin,restaurant]
+        end
+        column :phoneNo
+        column :cutPercent
+        column :status
       end
+      strong{link_to "View all Restaurants",admin_restaurants_path}
     end
 
     # Here is an example of a simple dashboard with columns and panels.
