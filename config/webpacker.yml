@@ -8,9 +8,19 @@ default: &default
   cache_path: tmp/cache/webpacker
   webpack_compile_output: true
 
+
+
   # Additional paths webpack should lookup modules
   # ['app/assets', 'engine/foo/app/assets']
+<<<<<<< Updated upstream
   additional_paths: ['vendor/assets/javascripts']
+=======
+<<<<<<< Updated upstream
+  additional_paths: []
+=======
+  additional_paths: ["vendor/assets/javascripts/dashboard"]
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
   # Reload manifest.json on all requests so we reload latest compiled packs
   cache_manifest: false

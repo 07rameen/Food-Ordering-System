@@ -22,4 +22,13 @@ import "bootstrap"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+<<<<<<< Updated upstream
 require('index')
+=======
+<<<<<<< Updated upstream
+=======
+
+window.$ = window.jQuery = require("jquery");
+require("index");
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
