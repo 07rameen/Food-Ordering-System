@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rate: 1
+  expirationDate: MyString
+  discountable: one
+  discountable_type: Discountable
+
+two:
+  rate: 1
+  expirationDate: MyString
+  discountable: two
+  discountable_type: Discountable
