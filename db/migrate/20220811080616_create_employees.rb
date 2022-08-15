@@ -6,7 +6,7 @@ class CreateEmployees < ActiveRecord::Migration[6.1]
       t.integer :age
       t.string :email
       t.string :phoneNo
-      t.references :restaurant, null: false, foreign_key: true
+      t.references :restaurant, null: false, foreign_key: { to_table: :employees }
 
       t.timestamps
     end
