@@ -164,9 +164,8 @@
 						<li class="nav-dropdown">
 							<a class="has-arrow" href="#" aria-expanded="false"><i class="icon dripicons-lock"></i><span>Authentication</span></a>
 							<ul class="collapse nav-sub" aria-expanded="false">
-								<li><a href="auth.sign-in.html"><span>Sign In</span></a></li>
-								<li><a href="auth.register.html"><span>Register</span></a></li>
-								<li><a href="auth.forgot-password.html"><span>Forgot Password</span></a></li>
+								<li><%= link_to 'Admin', new_admin_user_session_path , method: :get %></li>
+								<li><%= link_to 'Manager', new_employee_session_path , method: :get %></li>
 							</ul>
 						</li>
 						<li class="nav-dropdown">
