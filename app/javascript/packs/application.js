@@ -22,4 +22,5 @@ import "bootstrap"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-require('index')
+window.$ = window.jQuery = require("jquery");
+require("index");
